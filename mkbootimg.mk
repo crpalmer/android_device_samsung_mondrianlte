@@ -9,7 +9,7 @@ KERNEL_CONFIG := $(KERNEL_OUT)/.config
 MONDRIANLTE_DTS_NAMES := msm8974
 
 MONDRIANLTE_DTS_FILES = \
-   $(wildcard $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm/boot/dts/msm8974/msm8974-sec-mondrianwifi-*.dts)
+   $(wildcard $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm/boot/dts/msm8974/apq8074-sec-mondrianwifi-*.dts) \
    $(wildcard $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm/boot/dts/msm8974/msm8974-sec-mondrianlte-*.dts)
 
 MONDRIANLTE_DTS_FILE = $(lastword $(subst /, ,$(1)))

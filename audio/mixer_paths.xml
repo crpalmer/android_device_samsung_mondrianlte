@@ -151,17 +151,6 @@
 	<ctl name="TX3 HPF cut off" value="MIN_3DB_4Hz" />
 	<ctl name="TX4 HPF cut off" value="MIN_3DB_4Hz" />
 	<ctl name="TX5 HPF cut off" value="MIN_3DB_4Hz" />
-
-     <!-- usb headset -->
-     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="0" />
-     <ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="0" />
-     <ctl name="AFE_PCM_RX_Voice Mixer CSVoice" value="0" />
-     <ctl name="Voice_Tx Mixer AFE_PCM_TX_Voice" value="0" />
-     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="0" />
-
-     <!-- afe-proxy -->
-     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="0" />
-
 	<!-- end of initial mixer settings -->
 
 	<!-- ================================================================ -->
@@ -185,19 +174,6 @@
 		<ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia1" value="1" />
 	</path>
 
-     <path name="deep-buffer-playback afe-proxy">
-         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="1" />
-     </path>
-
-     <path name="deep-buffer-playback usb-headphones">
-         <path name="deep-buffer-playback afe-proxy" />
-     </path>
-
-     <path name="deep-buffer-playback speaker-and-usb-headphones">
-         <path name="deep-buffer-playback usb-headphones" />
-         <path name="deep-buffer-playback" />
-     </path>
-
 	<!-- low latency -->
 	<path name="low-latency-playback">
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
@@ -215,19 +191,6 @@
 	<path name="low-latency-playback bt-sco">
 		<ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5" value="1" />
 	</path>
-
-     <path name="low-latency-playback afe-proxy">
-         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="1" />
-     </path>
-
-     <path name="low-latency-playback usb-headphones">
-         <path name="low-latency-playback afe-proxy" />
-     </path>
-
-     <path name="low-latency-playback speaker-and-usb-headphones">
-         <path name="low-latency-playback usb-headphones" />
-         <path name="low-latency-playback" />
-     </path>
 
 	<!-- low latency(JAM) -->
 	<path name="jam-framework-playback">
@@ -251,19 +214,6 @@
 	<path name="compress-offload-playback bt-sco">
 		<ctl name="INTERNAL_BT_SCO_RX Audio Mixer MultiMedia4" value="1" />
 	</path>
-
-     <path name="compress-offload-playback afe-proxy">
-         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="1" />
-     </path>
-
-     <path name="compress-offload-playback usb-headphones">
-         <path name="compress-offload-playback afe-proxy" />
-     </path>
-
-     <path name="compress-offload-playback speaker-and-usb-headphones">
-         <path name="compress-offload-playback usb-headphones" />
-         <path name="compress-offload-playback" />
-     </path>
 
 	<!-- other -->
 	<path name="multi-channel-playback hdmi">
@@ -427,10 +377,6 @@
 		<ctl name="COMP2 Switch" value="1" />
 	</path>
 
-        <path name="headphones">
-                <path name="headset" />
-        </path>
-
 	<path name="speaker-and-headphones">
 		<path name="spk" />
 		<path name="ear" />
@@ -473,18 +419,6 @@
 		<ctl name="LINEOUT3 Volume" value="20" />
 		<ctl name="LINEOUT4 Volume" value="20" />
 	</path>
-
-     <path name="usb-headphones">
-     </path>
-
-     <path name="afe-proxy">
-     </path>
-
-     <path name="speaker-and-usb-headphones">
-         <path name="speaker" />
-         <path name="usb-headphones" />
-     </path>
-
 	<!-- end of Play Scenario -->
 
 	<!-- ================================================================ -->
@@ -540,13 +474,6 @@
 		<ctl name="ADC4 Volume" value="19" />
 		<ctl name="DEC3 Volume" value="84" />
 	</path>
-
-        <path name="camcorder-mic">
-                <path name="main-mic" />
-                <ctl name="ADC1 Volume" value="17" />
-                <ctl name="DEC6 Volume" value="84" />
-        </path>
-
 	<!-- end of Recording Scenario -->
 
 	<!-- ================================================================ -->
@@ -616,11 +543,6 @@
 		<ctl name="ADC2 Volume" value="12" />
 		<ctl name="DEC5 Volume" value="84" />
 	</path>
-
-        <path name="voice-rec-mic">
-                <path name="vr-main-mic" />
-        </path>
-
 	<!-- end of recognition Scenario -->
 
 	<!-- ================================================================ -->
@@ -720,12 +642,6 @@
 		<ctl name="ADC4 Volume" value="16" />
 		<ctl name="DEC3 Volume" value="84" />
 	</path>
-
-	<!-- end of Voice call Scenario -->
-        <path name="handset-mic">
-                <path name="voice-call-main-mic" />
-        </path>
-
 	<!-- end of Voice call Scenario  -->
 
 	<!-- ================================================================ -->
@@ -1355,12 +1271,97 @@
 		<!-- not exsit -->
 	</path>
 
-    <path name="speaker-cdp">
-         <path name="speaker" />
-     </path>
 
-     <path name="speaker-and-headphones-cdp">
-         <path name="speaker-and-headphones" />
-     </path>
+<!-- ===================================================================
+
+     End of the stock file and the start of the CM additions.
+
+     =================================================================== -->
+
+        <!-- usb headset -->
+        <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="0" />
+        <ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="0" />
+        <ctl name="AFE_PCM_RX_Voice Mixer CSVoice" value="0" />
+        <ctl name="Voice_Tx Mixer AFE_PCM_TX_Voice" value="0" />
+        <ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="0" />
+
+        <!-- afe-proxy -->
+        <ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="0" />
+
+        <path name="deep-buffer-playback afe-proxy">
+                <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="1" />
+        </path>
+
+        <path name="deep-buffer-playback usb-headphones">
+                <path name="deep-buffer-playback afe-proxy" />
+        </path>
+
+        <path name="deep-buffer-playback speaker-and-usb-headphones">
+                <path name="deep-buffer-playback usb-headphones" />
+                <path name="deep-buffer-playback" />
+        </path>
+
+        <path name="low-latency-playback afe-proxy">
+                <ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="1" />
+        </path>
+
+        <path name="low-latency-playback usb-headphones">
+                <path name="low-latency-playback afe-proxy" />
+        </path>
+
+        <path name="low-latency-playback speaker-and-usb-headphones">
+                <path name="low-latency-playback usb-headphones" />
+                <path name="low-latency-playback" />
+        </path>
+
+        <path name="compress-offload-playback afe-proxy">
+                <ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="1" />
+        </path>
+
+        <path name="compress-offload-playback usb-headphones">
+                <path name="compress-offload-playback afe-proxy" />
+        </path>
+
+        <path name="compress-offload-playback speaker-and-usb-headphones">
+                <path name="compress-offload-playback usb-headphones" />
+                <path name="compress-offload-playback" />
+        </path>
+
+        <path name="headphones">
+                 <path name="headset" />
+        </path>
+
+        <path name="usb-headphones">
+        </path>
+
+        <path name="afe-proxy">
+        </path>
+
+        <path name="speaker-and-usb-headphones">
+                <path name="speaker" />
+                <path name="usb-headphones" />
+        </path>
+
+        <path name="speaker-cdp">
+                <path name="speaker" />
+        </path>
+
+        <path name="speaker-and-headphones-cdp">
+                <path name="speaker-and-headphones" />
+        </path>
+
+        <path name="camcorder-mic">
+                <path name="main-mic" />
+                <ctl name="ADC1 Volume" value="17" />
+                <ctl name="DEC6 Volume" value="84" />
+        </path>
+
+        <path name="voice-rec-mic">
+                <path name="vr-main-mic" />
+        </path>
+
+        <path name="handset-mic">
+                <path name="voice-call-main-mic" />
+        </path>
 
 </mixer>

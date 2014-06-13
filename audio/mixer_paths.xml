@@ -1364,4 +1364,21 @@
                 <path name="voice-call-main-mic" />
         </path>
 
+	<path name="voice-speaker-dmic-ef">
+		<path name="spk" />
+		<ctl name="RX4 Digital Volume" value="84" />
+		<ctl name="RX6 Digital Volume" value="84" />
+		<ctl name="LINEOUT3 Volume" value="20" />
+		<ctl name="LINEOUT4 Volume" value="20" />
+	</path>
+
+	<path name="voice-headphones">
+                <path name="headset" />
+        </path>
+
+	<path name="voice-headset-mic">
+		<path name="ear-mic" />
+		<ctl name="ADC2 Volume" value="14" />
+		<ctl name="DEC5 Volume" value="72" />
+	</path>
 </mixer>

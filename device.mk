@@ -42,14 +42,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
-# Radio properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib/libsec-ril.so \
-    ril.subscription.types=NV,RUIM \
-    ro.ril.hsxpa=1 \
-    ro.ril.gprsclass=10 \
-    persist.radio.add_power_save=1 \
-    persist.radio.apm_sim_not_pwdn=1 \
-    persist.radio.lte_vrat_report=1 \
-
 $(call inherit-product, device/samsung/tabpro-common/tabpro.mk)

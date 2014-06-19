@@ -1327,10 +1327,6 @@
                 <path name="compress-offload-playback" />
         </path>
 
-        <path name="headphones">
-                 <path name="headset" />
-        </path>
-
         <path name="usb-headphones">
         </path>
 
@@ -1349,36 +1345,4 @@
         <path name="speaker-and-headphones-cdp">
                 <path name="speaker-and-headphones" />
         </path>
-
-        <path name="camcorder-mic">
-                <path name="main-mic" />
-                <ctl name="ADC1 Volume" value="17" />
-                <ctl name="DEC6 Volume" value="84" />
-        </path>
-
-        <path name="voice-rec-mic">
-                <path name="vr-main-mic" />
-        </path>
-
-        <path name="handset-mic">
-                <path name="voice-call-main-mic" />
-        </path>
-
-	<path name="voice-speaker-dmic-ef">
-		<path name="spk" />
-		<ctl name="RX4 Digital Volume" value="84" />
-		<ctl name="RX6 Digital Volume" value="84" />
-		<ctl name="LINEOUT3 Volume" value="20" />
-		<ctl name="LINEOUT4 Volume" value="20" />
-	</path>
-
-	<path name="voice-headphones">
-                <path name="headset" />
-        </path>
-
-	<path name="voice-headset-mic">
-		<path name="ear-mic" />
-		<ctl name="ADC2 Volume" value="14" />
-		<ctl name="DEC5 Volume" value="72" />
-	</path>
 </mixer>

@@ -32,6 +32,11 @@ PRODUCT_COPY_FILES_OVERRIDES += \
    system/etc/permissions/android.hardware.nfc.xml \
    system/etc/permissions/android.hardware.nfc.hce.xml
 
+# Rootdir
+
+PRODUCT_PACKAGES += \
+    init.qcom.bt.sh
+
 # Wifi
 PRODUCT_PACKAGES += \
     wcnss_service \

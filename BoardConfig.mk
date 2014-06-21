@@ -33,11 +33,6 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13631488
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2569011200
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12661537792
 
-# Recovery
-
-TARGET_RECOVERY_FSTAB := device/samsung/mondrianlte/rootdir/etc/fstab.qcom
-
-
 # WLAN: Use qmi-client interface to load the correct MAC address
 TARGET_USES_QCOM_WCNSS_QMI := true
 

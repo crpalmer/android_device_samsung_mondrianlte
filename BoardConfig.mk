@@ -20,33 +20,34 @@
 # definition file).
 #
 
-TARGET_MSM8974_COMMON_WLAN_VARIANT := prima
 include device/samsung/tabpro-common/BoardConfigCommon.mk
 
+TARGET_OTA_ASSERT_DEVICE := mondrianwifi,mondrianwifiue,mondrianwifixx,mondrianlte,mondrianltexx
+
 # Kernel
-TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_mondrian_defconfig
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/mondrianlte/mkbootimg.mk
+TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_mondrian_defconfig
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/mondrianlte/bluetooth
+BOARD_HAVE_BLUETOOTH_QCOM := true
+
+# Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13631488
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2569011200
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12661537792
 
 # Recovery
-
 TARGET_RECOVERY_FSTAB := device/samsung/mondrianlte/rootdir/etc/fstab.qcom
 
-
-# WLAN: Use qmi-client interface to load the correct MAC address
+# Wifi
+BOARD_HAS_QCOM_WLAN := true
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 TARGET_USES_QCOM_WCNSS_QMI := true
-
-# OTA Identification
-#
-# It's fine to install on mondrianwifi or lte because the devices are
-# unified other than the fact that one supports telephony and the other
-# doesn't.
-#
-# If someone wants to use the telephony apps for some reason, let's let them.
-
-TARGET_OTA_ASSERT_DEVICE := mondrianwifi,mondrianwifiue,mondrianwifixx,mondrianlte,mondrianltexx
+TARGET_USES_WCNSS_CTRL := true
+WIFI_DRIVER_FW_PATH_AP    := "ap"
+WIFI_DRIVER_FW_PATH_STA   := "sta"

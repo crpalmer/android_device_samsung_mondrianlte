@@ -27,7 +27,7 @@ TARGET_OTA_ASSERT_DEVICE := mondrianwifi,mondrianwifiue,mondrianwifixx,mondrianl
 # Kernel
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/mondrianlte/mkbootimg.mk
-TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_mondrian_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_mondrian_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/mondrianlte/bluetooth

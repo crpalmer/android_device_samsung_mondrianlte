@@ -20,3 +20,7 @@ rild.libargs=-d /dev/smd0
 rild.libpath=/system/lib/libsec-ril.so
 ro.telephony.default_network=10
 ro.telephony.ril_class=TabproLteRIL
+
+# CWMR Options
+ro.cwm.forbid_format=/boot,/firmware,/firmware-modem
+ro.cwm.forbid_mount=/boot

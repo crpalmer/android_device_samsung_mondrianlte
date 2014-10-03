@@ -378,17 +378,12 @@
 	</path>
 
 	<path name="speaker-and-headphones">
-		<path name="spk" />
 		<path name="ear" />
-		<ctl name="DAC1 Switch" value="1" />
-		<ctl name="HPHL Volume" value="0" />
-		<ctl name="HPHR Volume" value="0" />
+		<ctl name="HPHL Volume" value="20" />
+		<ctl name="HPHR Volume" value="20" />
 		<ctl name="RX1 Digital Volume" value="76" />
 		<ctl name="RX2 Digital Volume" value="76" />
-		<ctl name="RX4 Digital Volume" value="83" />
-		<ctl name="RX6 Digital Volume" value="83" />
-		<ctl name="LINEOUT3 Volume" value="19" />
-		<ctl name="LINEOUT4 Volume" value="19" />
+		<ctl name="COMP1 Switch" value="1" />
 	</path>
 
 	<path name="speaker-and-hdmi">

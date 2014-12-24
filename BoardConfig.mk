@@ -33,6 +33,7 @@ TARGET_KERNEL_CONFIG := cyanogenmod_mondrian_defconfig
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/mondrianlte/bluetooth
 BLUETOOTH_HCI_USE_MCT := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
+QCOM_BT_USE_SMD_TTY := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760

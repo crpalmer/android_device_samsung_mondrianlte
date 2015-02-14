@@ -16,5 +16,5 @@
 /dev/block/platform/msm_sdcc.1/by-name/recovery  /recovery          emmc    defaults   recoveryonly
 
 # VOLD
-/devices/msm_sdcc.2/mmc_host/mmc1*               auto               auto    defaults   voldmanaged=sdcard1:auto
+/devices/msm_sdcc.2/mmc_host/mmc1*               auto               auto    defaults   voldmanaged=sdcard1:auto,noemulatedsd
 /devices/platform/xhci-hcd*                      auto               auto    defaults   voldmanaged=usbdisk:auto

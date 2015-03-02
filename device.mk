@@ -15,7 +15,7 @@
 #
 
 ## Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/tabpro-common/tabpro-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/mondrianlte/mondrianlte-vendor.mk)
 
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay

@@ -1,0 +1,10 @@
+# Camera
+lib/libmmcamera_s5k6b2yx.so
+lib/libTsAe.so
+vendor/lib/libmmcamera_imx134.so
+vendor/lib/libmmcamera2_cpp_module.so
+vendor/lib/libmmcamera2_isp_modules.so
+vendor/lib/libmmcamera2_sensor_modules.so
+
+# Sensors
+lib/hw/sensors.msm8974.so

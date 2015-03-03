@@ -41,6 +41,11 @@ PRODUCT_COPY_FILES_OVERRIDES += \
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh
 
+# Telephony
+
+PRODUCT_COPY_FILES += \
+   frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+
 # Wifi
 PRODUCT_PACKAGES += \
     wcnss_service \

@@ -4,4 +4,4 @@ $(call inherit-product, device/samsung/mondrianlte/full_mondrianlte.mk)
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 PRODUCT_DEVICE := mondrianlte
-PRODUCT_NAME := cm_mondrianlte
+PRODUCT_NAME := lineage_mondrianlte
